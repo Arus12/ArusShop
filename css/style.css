@@ -1,0 +1,66 @@
+* {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.2vw;
+}
+
+li * {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}
+
+a {
+    text-decoration: none;
+}
+
+header {
+    display: grid;
+    text-align: center;
+    gap: 50px 50px;
+    grid-template-areas:
+        "logo search-field search-field user shopping-card";
+}
+
+header a {
+    margin: auto;
+}
+
+header a img {
+    max-width: 125px;
+    max-height: 125px;
+    height: 100%;
+    width: 100%;
+    margin: auto;
+}
+
+main>ul {
+    margin: 2rem auto 0 2rem
+}
+
+main>ul.catalog {
+    list-style-type: none;
+    display: block;
+    width: 15%;
+    border: 2px solid black;
+    padding: 0% 0% 0% 0%;
+}
+
+main>ul>li {
+    font-size: 1.2vw;
+    padding: 20% 2% 20% 2%;
+    text-align: center;
+    border: 1px solid black;
+}
+
+footer {
+    background-color: lightblue;
+    margin: 2em auto auto auto;
+    display: grid;
+    text-align: center;
+    gap: 50px 50px;
+    grid-template-areas:
+        ". contact services point-of-sale"
+}
+
+footer>a {
+    padding: 2em 2em 2em 2em;
+}
