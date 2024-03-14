@@ -4,7 +4,7 @@
 <head>
     <title>ArusShop</title>
     <link href="css/style.css" rel="stylesheet" />
-    <link rel="icon" href="img/logo.png">
+    <link rel="icon" href="img/logo/logo.png">
     <meta name="description" content="ArusShop">
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -14,7 +14,7 @@
 
 <body>
     <header>
-        <a href="." title="ArusShop" style="grid-area:logo"><img src="img/logo.png" alt="Shop logo"></a>
+        <a href="." title="ArusShop" style="grid-area:logo"><img src="img/logo/logo.png" alt="Shop logo"></a>
         <form action="/search" class="search-field" method="get" style="grid-area:search-field; margin:auto">
             <i class="fa-solid fa-magnifying-glass"></i>
             <input aria-label="Disk, RAM, AMD..." id="fulltext" maxlength="200" placeholder="Disk, RAM, AMD..." type="search" value="">
@@ -25,22 +25,13 @@
     </header>
 
     <main>
-        <ul class="catalog">
-            <li><a href=".">Elektro</a></li>
-            <li><a href=".">Zahrada</a></li>
-            <li><a href=".">Potraviny</a></li>
-            <li><a href=".">Elektro</a></li>
-            <li><a href=".">Zahrada</a></li>
-            <li><a href=".">Potraviny</a></li>
-            <li><a href=".">Elektro</a></li>
-            <li><a href=".">Zahrada</a></li>
-            <li><a href=".">Potraviny</a></li>
-        </ul>
         <?php
         require_once "php/autoloader.php";
         $loader = new Loader;
-        $loader->load("mainPage");
-        $obj = new mainPage();
+        $loader->load("getContent");
+        $page = new getContent();
+        $page->get_content();
+        $page->get_products()
         ?>
     </main>
 
