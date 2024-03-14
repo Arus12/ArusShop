@@ -12,6 +12,10 @@ a {
     text-decoration: none;
 }
 
+.checked {
+    color: orange;
+}
+
 header {
     display: grid;
     text-align: center;
@@ -24,24 +28,29 @@ header a {
     margin: auto;
 }
 
-header a img {
-    max-width: 125px;
-    max-height: 125px;
+header>a>img {
+    max-width: 100px;
+    max-height: 100px;
     height: 100%;
     width: 100%;
-    margin: auto;
 }
 
-main>ul {
-    margin: 2rem auto 0 2rem
+main {
+    display: grid;
+    gap: 50px 50px;
+    grid-template-areas:
+        "catalog content"
+        "catalog products_titel";
+    grid-template-rows: auto 2fr; 
+
 }
 
 main>ul.catalog {
+    grid-area: catalog;
     list-style-type: none;
-    display: block;
-    width: 15%;
     border: 2px solid black;
-    padding: 0% 0% 0% 0%;
+    padding: 0;
+    margin: 1.5em 1.5em 0 1.5em;
 }
 
 main>ul>li {
@@ -51,16 +60,92 @@ main>ul>li {
     border: 1px solid black;
 }
 
+main>.content {
+    grid-area: content;
+    margin: 1.5em auto 0.5em 1.5em;
+    border: black solid 2px;
+    padding: 1em;
+}
+
+main>.content>.category {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+main>.content>.category>.category_titel {
+    padding: 1.5em;
+}
+
+main>.products_tile {
+    grid-area: products_titel;
+    margin: 0 auto 0.5em 1.5em;
+}
+main>.products_tile>.products_sort{
+    display: flex;
+}
+main>.products_tile>.products_sort>.sort_tile{
+    padding: 0.8em 0.4em 0.8em 0.4em;
+    border: black 1px solid;
+}
+main>.products_tile>.products{
+    display:flex;
+    flex-wrap: wrap;
+    border: black solid 2px;
+    padding: 1em;
+}
+
+main>.products_tile>.products>.product_tile{
+    padding: 2em;
+    height: auto;
+    width: 15em;
+}
+
+main>.products_tile>.products>.product_tile img{
+    max-width: 120px;
+    max-height: 120px;
+    width: 100%;
+    height: 100%;
+}
+
+main>.products_tile>.products>.product_tile >.product_description .product_price{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+main>.products_tile>.products>.product_tile >.product_description> .product_price .add_product{
+    text-align: right;
+}
+
+main>.products_tile>.products>.product_tile >.product_description .product_state{
+    padding: 1em;
+    text-align: center;
+}
+
 footer {
-    background-color: lightblue;
     margin: 2em auto auto auto;
     display: grid;
     text-align: center;
     gap: 50px 50px;
     grid-template-areas:
-        ". contact services point-of-sale"
+        ". contact services point-of-sale";
 }
 
 footer>a {
     padding: 2em 2em 2em 2em;
+}
+
+@media only screen and (max-width: 480px) {
+    header>a>img {
+        min-width: 20px;
+        min-height: 20px;
+        max-width: 50px;
+        max-height: 50px;
+        height: 100%;
+        width: 100%;
+    }
+
+    main {
+        grid-template-columns: 1fr;
+        /* Na malých obrazovkách nebude katalog viditelný */
+    }
 }
