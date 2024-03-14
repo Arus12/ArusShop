@@ -1,7 +1,6 @@
 <?php
 class Loader
 {
-    
     public static function load(string $className)
     {
         define("APP_DIR", "php/");
@@ -12,4 +11,3 @@ class Loader
         }
     }
 }
-?>
